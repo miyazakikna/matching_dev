@@ -1,0 +1,32 @@
+1. Node.jsをインストール
+2. Next.jsの環境作り
+npx create-next-app app --example "https://github.com/miyazakikna/NextjsStarter/tree/master/app"
+
+3. material-uiをインストール
+	npm	install --save @material-ui/core @material-ui/icons @material-ui/system 
+
+4. firebase Auth
+　firebaseでプロジェクトを作成
+　Authenticationのsign-in methodにあるメール/パスワードを有効する
+　firebaseを入れる
+    npm install -g firebase-tools
+	npm install --save firebase
+　セキュリティレベルを下げる（PSの場合）
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+　.encにfirebase記載のapi keyをコピペしてnext.configに定数を記載
+ 
+ 適当に入力画面を作成し下記で登録
+ auth.createUserWithEmailAndPassword(email, password)
+
+ 5. ヘッダーを作成
+
+
+
+
+参考サイト
+https://github.com/deatiger/ec-app-demo/blob/develop/src/assets/style.css
+https://ec-app-12ba0.web.app/
+
+https://material-ui.com/getting-started/templates/checkout/
+
+https://material-ui.com/store/items/onepirate/
