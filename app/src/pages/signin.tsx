@@ -1,8 +1,8 @@
-import React, {useState, useCallback} from 'react';
+import React, { useState, useCallback } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router'
-import {TextInput, PrimaryButton} from "../components/UIkit";
+import { TextInput, PrimaryButton } from "../components/UIkit";
 import Layout from '../components/layout'
 import { auth } from '../utils/Firebase'
 import { AuthContext } from '../context/AuthProvider'
@@ -33,9 +33,9 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
     },
-  }));
+}));
 
-function SignIn() { 
+function SignIn() {
     const classes = useStyles();
     const router = useRouter()
     const [email, setEmail] = useState<string>('')
@@ -43,11 +43,11 @@ function SignIn() {
 
     const inputEmail = useCallback((e) => {
         setEmail(e.target.value)
-    },[setEmail]);
+    }, [setEmail]);
 
     const inputPassword = useCallback((e) => {
         setPassword(e.target.value)
-    },[setPassword]);
+    }, [setPassword]);
 
     const signIn = async () => {
         try {
@@ -78,7 +78,7 @@ function SignIn() {
                 <Typography align="center" variant="h4">
                     SIGN IN
                 </Typography>
-                <Avatar className={ classes.avatar }>
+                <Avatar className={classes.avatar}>
                     <LockOutlinedIcon />
                 </Avatar>
                 <TextInput

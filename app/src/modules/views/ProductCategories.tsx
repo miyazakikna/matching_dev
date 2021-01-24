@@ -8,6 +8,8 @@ import {
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
+import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -95,13 +97,13 @@ function ProductCategories(props: WithStyles<typeof styles>) {
     {
       url:
         'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
-      title: 'Snorkeling',
+      title: 'Apparel',
       width: '40%',
     },
     {
       url:
         'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
-      title: 'Massage',
+      title: 'Community',
       width: '20%',
     },
     {
@@ -128,54 +130,40 @@ function ProductCategories(props: WithStyles<typeof styles>) {
       title: 'Shopping',
       width: '24%',
     },
-    {
-      url:
-        'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
-      title: 'Walking',
-      width: '40%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80',
-      title: 'Fitness',
-      width: '20%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
-      title: 'Reading',
-      width: '40%',
-    },
   ];
+
+  const router = useRouter()
+  const checkout = () => {
+    router.push('/checkout')
+  }
 
   return (
     <Container className={classes.root} component="section">
-      <Typography variant="h4" marked="center" align="center" component="h2">
-        For all tastes and all desires
+      <Typography variant="h4" align="center" component="h2">
+        サービス一覧
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (
           <ButtonBase
             key={image.title}
             className={classes.imageWrapper}
+            onClick={checkout}
             style={{
               width: image.width,
-            }}
-          >
+            }}>
+
             <div
               className={classes.imageSrc}
               style={{
                 backgroundImage: `url(${image.url})`,
-              }}
-            />
+              }} />
             <div className={classes.imageBackdrop} />
-            <div className={classes.imageButton}>
+            <div className={classes.imageButton} >
               <Typography
                 component="h3"
                 variant="h6"
                 color="inherit"
-                className={classes.imageTitle}
-              >
+                className={classes.imageTitle}>
                 {image.title}
                 <div className={classes.imageMarked} />
               </Typography>

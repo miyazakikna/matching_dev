@@ -49,7 +49,8 @@ function FirstView(props: WithStyles<typeof styles>) {
         Personal Training
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-        在宅太りも最短2ヶ月でなかったことに。
+        いつでも どこにでも
+        あなただけのコーチを
       </Typography>
       <Button
         color="secondary"
@@ -57,8 +58,8 @@ function FirstView(props: WithStyles<typeof styles>) {
         size="large"
         className={classes.button}
         component="a"
-        onClick={ signUp }>
-          今すぐ登録
+        onClick={signUp}>
+        今すぐ登録
       </Button>
     </FirstViewLayout>
   );
